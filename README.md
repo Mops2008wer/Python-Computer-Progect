@@ -1,6 +1,6 @@
 # Python Computer Progect
 
-P# instance
+I# instance
 
-Documentation and more coming later...
+[Documentation](https://github.com/Mops2008wer/ISharp)
  
