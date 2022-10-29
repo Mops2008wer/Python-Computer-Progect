@@ -6,7 +6,7 @@ from ram import _mov_metadata
 coreinfo = {
     'corearm': '1089',
     'corever': 'A1_',
-    'corename': 'Core_AlphaPy '
+    'corename': 'MioCore_'
     }
 
 def _app(app):
