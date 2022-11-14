@@ -1,7 +1,7 @@
 raminfo = {
-    'ramarm': '1089',
-    'ramver': 'DR1_',
-    'ramname': 'MioRam_'
+    'ramarm': 'RX89',
+    'ramver': 'M1_',
+    'ramname': 'MetaRam_'
     }
 
 def _mov(x, data):

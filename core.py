@@ -4,9 +4,9 @@ from ram import _read_metadata
 from ram import _mov_metadata
 
 coreinfo = {
-    'corearm': '1089',
-    'corever': 'A1_',
-    'corename': 'MioCore_'
+    'corearm': '1189',
+    'corever': 'M2_',
+    'corename': 'MetaCore_'
     }
 
 def _app(app):
@@ -37,18 +37,17 @@ def _app(app):
 
             if(appcom[1] == "_file"):
 
-                _mov_metadata(metadata, _read(appcom[2]), appcom[3])
+                _mov_metadata(metadata, _read(_read_metadata(metadata, appcom[2])), appcom[3])
 
             elif(appcom[1] == "_md"):
 
-                _mov(appcom[2], _read_metadata(metadata, appcom[3]))
+                _mov(_read_metadata(metadata, appcom[2]), _read_metadata(metadata, appcom[3]))
 
             else:
 
                 _mov_metadata(metadata, appcom[1], appcom[2])
 
         elif(appcom[0] == "run"):
-
             if(appcom[1] == "_file"):
 
                 ___app(_read(appcom[2]))
@@ -85,26 +84,26 @@ def _app(app):
 
                 if(_read_metadata(metadata, appcom[2]) == _read_metadata(metadata, appcom[3])):
 
-                    ___app(appcom[4])
+                    ___app(_read_metadata(metadata, appcom[4]))
 
                 else:
                     
-                    ___app(appcom[5])
+                    ___app(_read_metadata(metadata, appcom[5]))
 
             if(appcom[1] == "_md"):
 
                 if(_read_metadata(metadata, appcom[2]) == appcom[3]):
 
-                    ___app(appcom[4])
+                    ___app(_read_metadata(metadata, appcom[4]))
 
                 else:
                     
-                    ___app(appcom[5])
+                    ___app(_read_metadata(metadata, appcom[5]))
 
         else:
 
             from bootsys import oprinit
-
+            
             oprinit(metadata, appcom)
 
 def ___app(_app_):
